@@ -21,7 +21,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 🚀 Run Repository Updater
-        uses: erdnaxela02/test_repository-updater@v1.0.4
+        uses: erdnaxela02/test_repository-updater@v1.0.5
         with:
           addon: ${{ github.event.client_payload.addon }}
           repository: ${{ github.repository }}
