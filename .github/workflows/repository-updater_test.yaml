@@ -1,5 +1,5 @@
 ---
-name: Repository Updater
+name: Repository Updater test
 
 # yamllint disable-line rule:truthy
 on:
@@ -7,6 +7,7 @@ on:
     secrets:
       UPDATER_TOKEN:
         required: true
+  workflow_dispatch:
 
 jobs:
   publish:
