@@ -2,5 +2,31 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "labels": ["dependencies"],
+  "timezone": "Europe/Paris",
+  "schedule": ["after 1pm", "before 3pm"],
   "prHourlyLimit": 3,
+  "stabilityDays": 3,
+  "rebaseWhen": "behind-base-branch",
+  "dependencyDashboardLabels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "commitMessagePrefix": "⬆️",
+      "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
+      "commitMessagePrefix": "⬆️ MAJOR",
+      "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "commitMessagePrefix": "⬆️",
+      "commitMessageTopic": "{{depName}}",
+      "groupName": "minor and patch",
+      "automerge": true
+    }
+  ]
 }
