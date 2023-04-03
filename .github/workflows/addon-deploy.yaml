@@ -9,12 +9,12 @@ on:
         description: Overrides the detected slug
         required: false
         type: string
-      hassio-addons:
+      repository:
         default: "hassio-addons"
         description: The name of the stable repository
         required: false
         type: string
-      hassio-addons-edge:
+      repository-edge:
         default: "hassio-addons-edge"
         description: The name of the edge repository
         required: false
