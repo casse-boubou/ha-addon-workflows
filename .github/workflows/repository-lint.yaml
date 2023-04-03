@@ -6,5 +6,21 @@ on:
   workflow_call:
 
 jobs:
-  workflows:
-    uses: hassio-addons/workflows/.github/workflows/repository-lint.yaml@main
+  json:
+    name: JSON Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run JQ
+        run: |
+          shopt -s globstar
+          cat **/*.json | jq '.'
+  yamllint:
+    name: YAMLLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+      - name: 🚀 Run YAMLLint
+        uses: frenck/action-yamllint@v1.4

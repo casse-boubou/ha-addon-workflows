@@ -1,5 +1,5 @@
 ---
-name: Addon Deploy
+name: Deploy
 
 concurrency:
   group: queue
@@ -20,6 +20,11 @@ on:
       repository_edge:
         default: "hassio-addons-edge"
         description: The name of the edge repository
+        required: false
+        type: string
+      repository_beta:
+        default: "repository-beta"
+        description: The name of the beta repository
         required: false
         type: string
     secrets:
