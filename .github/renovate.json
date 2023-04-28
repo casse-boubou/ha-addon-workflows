@@ -6,7 +6,7 @@
   "schedule": ["after 1pm", "before 3pm"],
   "prHourlyLimit": 3,
   "stabilityDays": 3,
-  "rebaseWhen": "behind-base-branch",
+  "rebaseWhen": "auto",
   "dependencyDashboardLabels": ["dependencies"],
   "packageRules": [
     {
