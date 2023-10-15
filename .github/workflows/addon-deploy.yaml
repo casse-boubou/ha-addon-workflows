@@ -249,4 +249,3 @@ jobs:
               "repository": "${{ github.repository }}",
               "version": "${{ github.event.release.tag_name }}"
             }
-            
