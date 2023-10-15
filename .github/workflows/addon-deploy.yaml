@@ -23,7 +23,7 @@ on:
         required: false
         type: string
       repository_beta:
-        default: "repository-beta"
+        default: "hassio-addons-beta"
         description: The name of the beta repository
         required: false
         type: string
@@ -202,6 +202,30 @@ jobs:
               "version": "${{ needs.information.outputs.version }}"
             }
 
+  publish-beta:
+    name: 📢 Publish to beta repository
+    if: needs.information.outputs.environment == 'beta'
+    needs:
+      - information
+      - deploy
+    environment:
+      name: ${{ needs.information.outputs.environment }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Dispatch repository updater update signal
+        uses: peter-evans/repository-dispatch@v2.1.2
+        with:
+          token: ${{ secrets.DISPATCH_TOKEN }}
+          repository: ${{ github.repository_owner }}/${{ inputs.repository_beta }}
+          event-type: update
+          client-payload: >
+            {
+              "addon": "${{ needs.information.outputs.slug }}",
+              "name": "${{ needs.information.outputs.name }}",
+              "repository": "${{ github.repository }}",
+              "version": "${{ needs.information.outputs.version }}"
+            }
+
   publish-stable:
     name: 📢 Publish to stable repository
     if: needs.information.outputs.environment == 'stable'
@@ -225,3 +249,4 @@ jobs:
               "repository": "${{ github.repository }}",
               "version": "${{ github.event.release.tag_name }}"
             }
+            
