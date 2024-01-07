@@ -31,7 +31,7 @@ la [page des contributeurs][contributors].
 
 MIT License
 
-Copyright (c) 2022-2023 Frosh
+Copyright (c) 2022-2024 [Frosh][Frosh]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -57,3 +57,4 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io
 [hacf]: https://forum.hacf.fr/
 [mike-degatano]: https://github.com/mdegat01/addon-workflows
+[Frosh]: https://github.com/erdnaxela02
