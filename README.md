@@ -51,10 +51,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[license-shield]: https://img.shields.io/github/license/erdnaxela02/hassio-addons
+[license-shield]: https://img.shields.io/github/license/casse-boubou/hassio-addons
 [contributors]: https://github.com/mdegat01/addon-workflows/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io
 [hacf]: https://forum.hacf.fr/
 [mike-degatano]: https://github.com/mdegat01/addon-workflows
-[Frosh]: https://github.com/erdnaxela02
+[Frosh]: https://github.com/casse-boubou
