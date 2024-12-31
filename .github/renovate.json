@@ -3,7 +3,7 @@
   "extends": ["config:base"],
   "labels": ["dependencies"],
   "timezone": "Europe/Paris",
-  "schedule": ["after 1pm", "before 3pm"],
+  "schedule": ["* 13-15 * * *"],
   "prHourlyLimit": 3,
   "stabilityDays": 3,
   "rebaseWhen": "auto",
