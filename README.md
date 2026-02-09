@@ -1,20 +1,20 @@
 # HA-addon-workflows
 
-Template des workflows utiliser pour le workflow des add-ons HA
+Template des workflows utiliser pour le workflow des apps HA
 
 [![License][license-shield]](LICENSE)
 
 ## About
 
 Ce repository contient les différents Github Actions Workflows utilisé par les
-add-ons HA. Les centraliser tous à cette place permet d'en faire des template
+apps HA. Les centraliser tous à cette place permet d'en faire des template
 utilisable pour les différent repository sans avoir à les éditer manuellement
 pour chacuns.
 
 ## Support
 
 Je ne suis pas dévellopeur, n'ai aucune formation de code, je suis simplement autodidact.
-Si vous avez une question concernant HA et ses add-ons vous pouvez consulter:
+Si vous avez une question concernant HA et ses apps vous pouvez consulter:
 
 - [Le Forum communautaire francophone][hacf] de HomeAssistant
 - [Le Forum communautaire anglophone][forum] de HomeAssistant.
