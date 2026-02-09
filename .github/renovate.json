@@ -1,47 +1,28 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "labels": [
-    "dependencies"
-  ],
+  "extends": ["config:recommended"],
+  "labels": ["dependencies"],
   "timezone": "Europe/Paris",
-  "schedule": [
-    "* 13-15 * * *"
-  ],
+  "schedule": ["* 13-15 * * *"],
   "prHourlyLimit": 3,
   "minimumReleaseAge": "3 days",
   "rebaseWhen": "auto",
-  "dependencyDashboardLabels": [
-    "dependencies"
-  ],
+  "dependencyDashboardLabels": ["dependencies"],
   "packageRules": [
     {
-      "matchManagers": [
-        "github-actions"
-      ],
+      "matchManagers": ["github-actions"],
       "commitMessagePrefix": "⬆️",
       "commitMessageTopic": "{{depName}}"
     },
     {
-      "matchManagers": [
-        "github-actions"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ],
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
       "commitMessagePrefix": "⬆️ MAJOR",
       "commitMessageTopic": "{{depName}}"
     },
     {
-      "matchManagers": [
-        "github-actions"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
       "commitMessagePrefix": "⬆️",
       "commitMessageTopic": "{{depName}}",
       "groupName": "minor and patch",
