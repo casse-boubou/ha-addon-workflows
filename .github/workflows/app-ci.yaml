@@ -149,7 +149,7 @@ jobs:
         with:
           persist-credentials: false
       - name: 🚀 Run zizmor
-        uses: zizmorcore/zizmor-action@v0.5.0
+        uses: zizmorcore/zizmor-action@v0.5.2
 
   dependency-review:
     name: Dependency review
@@ -161,7 +161,7 @@ jobs:
         with:
           persist-credentials: false
       - name: 👀 Dependency review
-        uses: actions/dependency-review-action@v4.8.2
+        uses: actions/dependency-review-action@v4.9.0
 
   build:
     name: Build ${{ matrix.architecture }}
@@ -204,7 +204,7 @@ jobs:
             exit 1
           fi
       - name: 🚀 Build
-        uses: docker/build-push-action@v6.18.0
+        uses: docker/build-push-action@v6.19.2
         with:
           push: false
           # zizmor: ignore[template-injection] - path input to action, not shell-executed
