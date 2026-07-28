@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: 🚀 Run Shellcheck
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: 🚀 Run YAMLLint
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: 🚀 Run Prettier
@@ -65,7 +65,7 @@ jobs:
       actions: read
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v6.1.0
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
       - name: 🚀 Run zizmor
