@@ -161,7 +161,7 @@ jobs:
         with:
           persist-credentials: false
       - name: 👀 Dependency review
-        uses: actions/dependency-review-action@v4.9.0
+        uses: actions/dependency-review-action@v5.0.0
 
   build:
     name: Build ${{ matrix.architecture }}
