@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "github>casse-boubou/.github//.github/renovate.json"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//build.yaml$/"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "(aarch64|amd64|armhf|armv7|i386):\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["//Dockerfile$/"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "commitMessagePrefix": "⬆️",
+      "commitMessageTopic": "App Base Image"
+    }
+  ]
+}
