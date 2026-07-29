@@ -1,32 +1,5 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "labels": ["dependencies"],
-  "timezone": "Europe/Paris",
-  "schedule": ["* 13-15 * * *"],
-  "prHourlyLimit": 3,
-  "minimumReleaseAge": "3 days",
-  "rebaseWhen": "auto",
-  "dependencyDashboardLabels": ["dependencies"],
-  "packageRules": [
-    {
-      "matchManagers": ["github-actions"],
-      "commitMessagePrefix": "⬆️",
-      "commitMessageTopic": "{{depName}}"
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["major"],
-      "commitMessagePrefix": "⬆️ MAJOR",
-      "commitMessageTopic": "{{depName}}"
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "commitMessagePrefix": "⬆️",
-      "commitMessageTopic": "{{depName}}",
-      "groupName": "minor and patch",
-      "automerge": true
-    }
+  "extends": [
+    "github>casse-boubou//.github//.github/renovate.json"
   ]
 }
