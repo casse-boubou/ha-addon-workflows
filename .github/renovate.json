@@ -1,32 +1,32 @@
 {
-  "extends": [
-    "github>casse-boubou/.github//.github/renovate.json"
-  ],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["//build.yaml$/"],
-      "matchStringsStrategy": "any",
-      "matchStrings": [
-        "(aarch64|amd64|armhf|armv7|i386):\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s"
-      ],
-      "datasourceTemplate": "docker"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["//Dockerfile$/"],
-      "matchStringsStrategy": "any",
-      "matchStrings": [
-        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+"
-      ],
-      "datasourceTemplate": "docker"
-    }
-  ],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "labels": ["dependencies"],
+  "timezone": "Europe/Paris",
+  "schedule": ["* 13-15 * * *"],
+  "prHourlyLimit": 3,
+  "minimumReleaseAge": "3 days",
+  "rebaseWhen": "auto",
+  "dependencyDashboardLabels": ["dependencies"],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
+      "matchManagers": ["github-actions"],
       "commitMessagePrefix": "⬆️",
-      "commitMessageTopic": "App Base Image"
+      "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
+      "commitMessagePrefix": "⬆️ MAJOR",
+      "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "commitMessagePrefix": "⬆️",
+      "commitMessageTopic": "{{depName}}",
+      "groupName": "minor and patch",
+      "automerge": true
     }
   ]
 }
