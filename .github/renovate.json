@@ -1,6 +1,6 @@
 {
   "extends": [
-    "github>casse-boubou/.github//.github/renovate.json"
+    "github>casse-boubou/.github/.github/renovate.json"
   ],
   "customManagers": [
     {
