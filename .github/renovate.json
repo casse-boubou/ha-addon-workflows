@@ -1,7 +1,6 @@
 {
-  "extends": [
-    "github>casse-boubou//.github/renovate.json"
-  ],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
   "customManagers": [
     {
       "customType": "regex",
@@ -27,6 +26,31 @@
       "matchDatasources": ["docker"],
       "commitMessagePrefix": "⬆️",
       "commitMessageTopic": "App Base Image"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
+      "commitMessagePrefix": "⬆️ MAJOR",
+      "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "commitMessagePrefix": "⬆️",
+      "commitMessageTopic": "{{depName}}",
+      "groupName": "minor and patch",
+      "automerge": true
+    },
+    {
+      "matchDatasources": ["repology"],
+      "commitMessagePrefix": "⬆️",
+      "commitMessageTopic": "{{packageName}}",
+      "groupName": "internal packages"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "commitMessagePrefix": "⬆️",
+      "commitMessageTopic": "docker {{packageName}} image"
     }
   ]
 }
