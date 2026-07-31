@@ -1,6 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>casse-boubou/.github//.github/renovate.json"],
+  "extends": [
+    "github>casse-boubou/.github//.github/renovate.json",
+    "docker:disable"
+  ],
   "customManagers": [
     {
       "customType": "regex",
@@ -20,6 +23,14 @@
       "matchUpdateTypes": ["major"],
       "commitMessagePrefix": "⬆️ MAJOR",
       "commitMessageTopic": "App Base Image"
+    },
+    {
+      "matchManagers": ["custom.regex"],
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["major"],
+      "commitMessagePrefix": "⬆️ MAJOR",
+      "commitMessageTopic": "App Base Image",
+      "groupName": "HomeAssistant App Base Image"
     },
     {
       "matchManagers": ["custom.regex"],
