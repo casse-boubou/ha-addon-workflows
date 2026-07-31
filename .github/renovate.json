@@ -9,6 +9,7 @@
       "customType": "regex",
       "managerFilePatterns": ["//Dockerfile$/", "//build.yaml$/"],
       "datasourceTemplate": "docker",
+      "depNameTemplate": "BASE_IMAGE",
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
@@ -20,7 +21,7 @@
     {
       "matchManagers": ["custom.regex"],
       "matchDatasources": ["docker"],
-      "matchSourceUrls": ["{{sourceUrl}}"],
+      "matchDepNames": ["BASE_IMAGE"],
       "matchUpdateTypes": ["major"],
       "commitMessagePrefix": "⬆️ MAJOR",
       "commitMessageTopic": "App Base Image",
@@ -29,7 +30,7 @@
     {
       "matchManagers": ["custom.regex"],
       "matchDatasources": ["docker"],
-      "matchSourceUrls": ["{{sourceUrl}}"],
+      "matchDepNames": ["BASE_IMAGE"],
       "matchUpdateTypes": ["minor", "patch"],
       "commitMessagePrefix": "⬆️",
       "commitMessageTopic": "App Base Image",
