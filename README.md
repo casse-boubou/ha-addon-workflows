@@ -11,6 +11,8 @@ apps HA. Les centraliser tous à cette place permet d'en faire des template
 utilisable pour les différent repository sans avoir à les éditer manuellement
 pour chacuns.
 
+Il copie les Github Actions Workflows original du repo workflows de [hassio-addons][hassio-addons]
+
 ## Support
 
 Je ne suis pas dévellopeur, n'ai aucune formation de code, je suis simplement autodidact.
@@ -56,5 +58,6 @@ SOFTWARE.
 [discord-ha]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io
 [hacf]: https://forum.hacf.fr/
+[hassio-addons]: https://github.com/hassio-addons/workflows
 [mike-degatano]: https://github.com/mdegat01/addon-workflows
 [Frosh]: https://github.com/casse-boubou
