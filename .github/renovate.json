@@ -20,13 +20,7 @@
     {
       "matchManagers": ["custom.regex"],
       "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major"],
-      "commitMessagePrefix": "⬆️ MAJOR",
-      "commitMessageTopic": "App Base Image"
-    },
-    {
-      "matchManagers": ["custom.regex"],
-      "matchDatasources": ["docker"],
+      "matchSourceUrls": ["{{sourceUrl}}"],
       "matchUpdateTypes": ["major"],
       "commitMessagePrefix": "⬆️ MAJOR",
       "commitMessageTopic": "App Base Image",
@@ -35,6 +29,7 @@
     {
       "matchManagers": ["custom.regex"],
       "matchDatasources": ["docker"],
+      "matchSourceUrls": ["{{sourceUrl}}"],
       "matchUpdateTypes": ["minor", "patch"],
       "commitMessagePrefix": "⬆️",
       "commitMessageTopic": "App Base Image",
