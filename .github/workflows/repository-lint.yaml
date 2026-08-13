@@ -4,9 +4,6 @@ name: Lint
 # yamllint disable-line rule:truthy
 on:
   workflow_call:
-  push:
-    branches:
-      - 'renovate/**'
 
 permissions:
   contents: read
